@@ -11,6 +11,16 @@ namespace PasswordValidationTesting
 
 			Assert.False(result);
 		}
+		[Fact]
+		public void IsPasswordSecure_returns_false_if_password_does_not_contains_uppercase_character()
+		{
+			var registerViewModel = new RegisterViewModel();
+
+			bool result = registerViewModel.IsPasswordSecure("12345678a");
+
+			Assert.False(result);
+
+		}
 	}
 
 	internal class RegisterViewModel
