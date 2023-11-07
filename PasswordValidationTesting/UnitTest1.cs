@@ -8,4 +8,9 @@ namespace PasswordValidationTesting
 
 		}
 	}
+
+	internal class RegisterViewModel
+	{
+		
+	}
 }
