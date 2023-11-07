@@ -11,6 +11,26 @@ namespace PasswordValidationTesting
 
 	internal class RegisterViewModel
 	{
+		internal bool IsPasswordSecure(string password)
+		{
+			if (password.Length < 8)
+			{
+				return false;
+			}
+			//1234A5678
+			if (!ContieneMayuscula(password))
+			{
+				return false;
+			}
+
+			if (!ContieneSimbolo(password))
+			{
+				return false;
+			}
+
+			return true;
+		}
+
 		private bool ContieneMayuscula(string password)
 		{
 			return password.Any(c => Char.IsLetter(c) && Char.IsUpper(c));
