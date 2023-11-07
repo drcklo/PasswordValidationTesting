@@ -3,9 +3,13 @@ namespace PasswordValidationTesting
 	public class UnitTest1
 	{
 		[Fact]
-		public void Test1()
+		public void IsPasswordSecure_returns_false_if_password_has_less_than_8_characters()
 		{
+			var registerViewModel = new RegisterViewModel();
 
+			bool result = registerViewModel.IsPasswordSecure("1234567");
+
+			Assert.False(result);
 		}
 	}
 
